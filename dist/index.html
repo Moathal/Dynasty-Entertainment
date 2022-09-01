@@ -22,31 +22,70 @@
       sizes="96x96"
     />
     <title>Dynasty Ent</title>
-  <link rel="icon" href="dynasty-logo-plain.png"><script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+  <link rel="icon" href="dynasty-logo-plain.png"><script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script><script defer src="methods.bundle.js"></script><script defer src="APIs.bundle.js"></script></head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#8293d9;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
       <div class="container-fluid">
+        <a class="navbar-brand d-flex justify-content-center align-items-center gap-1 mt-2 mt-lg-2 text-xl-start" href="#">
+          <img class="logo">
+          </img>
+          <h2 class="logo-text">Dynasty Entertainment</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="navbar-brand d-flex justify-content-center align-items-center gap-1 mt-2 mt-lg-0 text-xl-start" href="#">
-            <img class="logo">
-            </img>
-            <h2 class="logo-text">Dynasty Entertainment</h2>
-          </a>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link text-lg-start" href="#">Home</a>
+              <a class="nav-link text-lg-start text-white"  href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Movies</a>
+              <a class="nav-link text-white" href="#">Movies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">List</a>
+              <a class="nav-link text-white" href="#">List</a>
             </li>
           </ul>
         </div>
-        
       </div>
     </nav>
-   
+
+
+    <div class="movie-list"></div>
+    
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kimetsu no Yaiba: Yuukaku-hen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex align-items-center flex-column container-fluid">
+        <img class="img-fluid rounded shadow w-50" src="https://cdn.myanimelist.net/images/anime/1908/120036.jpg" alt="">
+      <h1 class="text-center">Kimetsu no Yaiba: Yuukaku-hen</h1>
+      <p class="mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia suscipit quidem architecto voluptatum corrupti, laudantium perferendis accusamus impedit commodi adipisci voluptates atque dignissimos recusandae. Culpa rem harum fugit magni ullam.</p>
+      <h3>Comments (5)</h3>
+
+      
+      <form>
+        <div class="mb-3">
+          <label for="InputName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="mb-3">
+          <label for="InputText" class="form-label">Comment</label>
+          <textarea class="form-control" id="exampleInputPassword1"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">comment</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
   </body>
 </html>

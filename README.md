@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Todo List
+# Dynasty Entertainment.
 
-> This project lists your daily tasks and you can add, order, edit and remove them yourself.
+> A list of movies are shown and you can add a comment on them or like them.
 
 
 ## Built With
@@ -12,7 +12,7 @@
 
 
 ## live preview
-[Click Here](https://Moathal.github.io/Todo-List)
+Not Available yet.
 
 
 ## Getting Started
@@ -22,12 +22,19 @@
 > Any Web Browser
 
 
+### Setup
+- clone the directory.
+- `npm i`.
+- `npm start`.
+
 
 ## Authors
 
 👤 **Mo'athal S. Kachi**
+👤 **Hassan Momanyi**
 
 - GitHub: [@githubhandle](https://github.com/Moathal)
+- GitHub: [@githubhandle](https://github.com/fullstop125)
 
 
 ## 🤝 Contributing
