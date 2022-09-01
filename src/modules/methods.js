@@ -1,12 +1,11 @@
-import {getAnime} from "./APIsGET&POST.js";
+import { getAnime } from './APIsGET&POST.js';
 
-export default class Methods {
-    async loadData(movieList, url) {
-        const list =  await getAnime(url);
+export default async function loadData(movieList, url) {
+  const list = await getAnime(url);
 
-        list.forEach((movie ,i) => {
-            const li = document.createElement('li');
-            li.innerHTML = `<img src="${movie.image}"><h2>${movie.title}</h2>
+  list.forEach((movie, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<img src="${movie.image}"><h2>${movie.title}</h2>
             <div class="container">
             <button id="cmnt-${i}"class="learn-more">
               <span class="circle" aria-hidden="true">
@@ -26,8 +25,6 @@ export default class Methods {
         </label>
       </div>
       <p class="card-body__likes like-text"> 0 likes</p>`;
-            movieList.appendChild(li);
-    });
-    };
+    movieList.appendChild(li);
+  });
 }
-
