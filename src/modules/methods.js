@@ -1,4 +1,4 @@
-import { getAnime } from './APIsGET&POST.js';
+import { getAnime, getComments } from './APIsGET&POST.js';
 
 export default class Methods {
   constructor() {
@@ -36,14 +36,12 @@ export default class Methods {
         synopsis: anime.synopsis,
         image: anime.image,
         likes: 0,
-        comments: 0,
       };
       this.animes.push(item);
     });
-    this.itemsCounter();
   }
 
-  loadModalInfo(index) {
+  async loadModalInfo(index, commentsAPI) {
     const anime = this.animes[index];
     document.getElementById('animeDescription').innerText = anime.synopsis;
     document.getElementById('modal-title').innerText = anime.title;
@@ -52,9 +50,10 @@ export default class Methods {
     const comments = document.querySelector('.comments');
     comments.id = `anime-${index}`;
     comments.innerHTML = '';
-    if (Array.isArray(anime.comments)) {
-      this.commentsCounter(index);
-      anime.comments.forEach((comment) => {
+    const commentsURL = `${commentsAPI}?item_id=${index}`;
+    const commentsArray = await getComments(commentsURL);
+    if (Array.isArray(commentsArray)) {
+      commentsArray.forEach((comment) => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `<div class="card">
