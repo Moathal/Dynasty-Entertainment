@@ -60,7 +60,7 @@ export default class Methods {
         this.addComment(
           index,
           comment.username,
-          comment.creationDate,
+          comment.creation_date,
           comment.comment,
         );
       });
