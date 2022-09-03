@@ -1,5 +1,5 @@
 {
-  "name": "todo-list",
+  "name": "capstone2-kanban",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Moathal/Todo-List.git"
+    "url": "git+https://github.com/Moathal/Capstone2-kanban.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Moathal/Todo-List/issues"
+    "url": "https://github.com/Moathal/Capstone2-kanban/issues"
   },
-  "homepage": "https://Moathal.github.io/Todo-List",
+  "homepage": "https://Moathal.github.io/Capstone2-kanban",
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",

@@ -71,6 +71,44 @@ body {
   align-items: center;
 }
 
+.comments {
+  width: 95%;
+  margin: 16px;
+}
+
+.card {
+  width: 98%;
+  border-radius: 8px;
+  background: #e1e0e0;
+  color: #27003f;
+  margin: 4px;
+}
+
+.comment-head {
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'cocogoose', sans-serif;
+}
+
+.date {
+  font-family: 'Roboto', sans-serif;
+}
+
+.comment-block {
+  padding: 9px;
+  font-family: 'Roboto', sans-serif;
+}
+
+small {
+  display: none;
+}
+
+small.show {
+  display: block;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
 
 footer {
@@ -207,11 +245,25 @@ ul.list-links {
 }
 
 @keyframes mymove {
-  0% { left: 0; }
-  25% { left: 15px; }
-  50% { left: 0; }
-  75% { left: 15px; }
-  100% { left: 0; }
+  0% {
+    left: 0;
+  }
+
+  25% {
+    left: 15px;
+  }
+
+  50% {
+    left: 0;
+  }
+
+  75% {
+    left: 15px;
+  }
+
+  100% {
+    left: 0;
+  }
 }
 
 .right-dis {

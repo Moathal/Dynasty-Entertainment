@@ -7,7 +7,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunktodo_list"] = self["webpackChunktodo_list"] || []).push([["APIs"],{
+(self["webpackChunkcapstone2_kanban"] = self["webpackChunkcapstone2_kanban"] || []).push([["APIs"],{
 
 /***/ "./src/modules/APIsGET&POST.js":
 /*!*************************************!*\
@@ -15,7 +15,7 @@
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getAnime\": () => (/* binding */ getAnime),\n/* harmony export */   \"getLikes\": () => (/* binding */ getLikes)\n/* harmony export */ });\nconst getAnime = async (url) => {\n  const options = {\n    method: 'GET',\n    headers: {\n      'X-RapidAPI-Key': '27a477cbdamsh49c8e3678f442ecp14a4f5jsn0efcece4205d',\n      'X-RapidAPI-Host': 'anime-db.p.rapidapi.com',\n    },\n  };\n  const response = await fetch(url, options).then((res) => res.json());\n  return response.data;\n};\n\nconst getLikes = async (url) => {\n  const response = await fetch(url).then((res) => res.json());\n  return response;\n};\n\n//# sourceURL=webpack://todo-list/./src/modules/APIsGET&POST.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getAnime\": () => (/* binding */ getAnime),\n/* harmony export */   \"getLikes\": () => (/* binding */ getLikes)\n/* harmony export */ });\nconst getAnime = async (url) => {\n  const options = {\n    method: 'GET',\n    headers: {\n      'X-RapidAPI-Key': '27a477cbdamsh49c8e3678f442ecp14a4f5jsn0efcece4205d',\n      'X-RapidAPI-Host': 'anime-db.p.rapidapi.com',\n    },\n  };\n  const response = await fetch(url, options).then((res) => res.json());\n  return response.data;\n};\n\nconst getLikes = async (url) => {\n  const response = await fetch(url).then((res) => res.json());\n  return response;\n};\n\n//# sourceURL=webpack://capstone2-kanban/./src/modules/APIsGET&POST.js?");
 
 /***/ })
 
