@@ -1,4 +1,4 @@
-import { getAnime, getComments } from './APIsGET&POST.js';
+import { getAnime, getComments, postComments } from './APIsGET&POST.js';
 
 export default class Methods {
   constructor() {
@@ -44,6 +44,8 @@ export default class Methods {
 
   async loadModalInfo(index, commentsAPI) {
     const anime = this.animes[index];
+    this.animes[index].comments = 0;
+    document.getElementById('commentsNumber').innerText = this.animes[index].comments;
     document.getElementById('animeDescription').innerText = anime.synopsis;
     document.getElementById('modal-title').innerText = anime.title;
     document.getElementById('modal-image').setAttribute('src', anime.image);
@@ -55,25 +57,48 @@ export default class Methods {
     const commentsArray = await getComments(commentsURL);
     if (Array.isArray(commentsArray)) {
       commentsArray.forEach((comment) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `<div class="card">
-                  <div class="comment-head">
-                  <h5 class="username">${comment.username}</h5>
-                  <span class="date">${comment.creation_date}</span>
-                  </div>
-                  <p class="comment-block">${comment.comment}</p>
-                </div>`;
-        comments.appendChild(card);
+        this.addComment(
+          index,
+          comment.username,
+          comment.creationDate,
+          comment.comment,
+        );
       });
     }
-    this.commentsCounter(index, commentsArray);
   }
 
-  commentsCounter(index, commentsArray) {
+  addComment(index, username, creationDate, comment) {
+    const card = document.createElement('div');
+    const comments = document.querySelector('.comments');
     const commentsNum = document.getElementById('commentsNumber');
-    commentsNum.innerText = 0;
-    if (Array.isArray(commentsArray)) commentsNum.innerText = commentsArray.length;
-    this.animes[index].comments = commentsNum.innerText;
+    card.className = 'card';
+    card.innerHTML = `<div class="card">
+                  <div class="comment-head">
+                  <h5 class="username">${username}</h5>
+                  <span class="date">${creationDate}</span>
+                  </div>
+                  <p class="comment-block">${comment}</p>
+                </div>`;
+    this.animes[index].comments += 1;
+    commentsNum.innerText = this.animes[index].comments;
+    comments.appendChild(card);
+  }
+
+  async addNewComment(commentsAPI) {
+    const username = document.getElementById('InputName');
+    const comment = document.getElementById('commentToPost');
+    const container = document.querySelector('.comments');
+    const index = container.id.substring(6, container.id.length);
+    const currentDate = new Date();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate() + 1).padStart(2, '0');
+    const url = `${commentsAPI}?item_id=${index}`;
+    await postComments(index, username.value, comment.value, url);
+    this.addComment(
+      index,
+      username.value,
+      `${currentDate.getFullYear()}-${month}-${day}`,
+      comment.value,
+    );
   }
 }
