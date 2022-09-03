@@ -123,7 +123,7 @@ footer {
   box-shadow: 2px 2px 60px 8px rgba(102, 98, 98, 0.5);
 }
 
-.follow-icons li {
+.follow-icons .social {
   margin: 0 5px;
   list-style: none;
 }
@@ -189,13 +189,13 @@ ul.list-links {
   justify-content: center;
 }
 
-.follow-icons li i {
+.follow-icons .social i {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
 }
 
-.follow-icons li span {
+.follow-icons .social span {
   padding-right: 6px;
 }
 
@@ -263,4 +263,8 @@ ul.list-links {
     align-items: center;
     justify-content: center;
   }
+}
+
+ul {
+  display: flex;
 }
