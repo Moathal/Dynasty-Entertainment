@@ -19,6 +19,7 @@ export async function getComments(url) {
   const response = await fetch(url).then((res) => res.json());
   return response;
 }
+
 export const postComments = async (id, username, comment, url) => {
   await fetch(url, {
     method: 'POST',
@@ -29,6 +30,18 @@ export const postComments = async (id, username, comment, url) => {
       item_id: id,
       username,
       comment,
+    }),
+  });
+};
+
+export const postLikes = async (id, url) => {
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
     }),
   });
 };

@@ -1,14 +1,21 @@
-import { getAnime, getComments, postComments } from './APIsGET&POST.js';
+import {
+  getAnime, getComments, postComments, getLikes,
+} from './APIsGET&POST.js';
 
 export default class Methods {
   constructor() {
     this.animes = [];
   }
 
-  async loadData(movieList, animeAPI) {
+  async loadData(movieList, animeAPI, likesAPI) {
     const list = await getAnime(animeAPI);
+    const likes = await getLikes(likesAPI);
     list.forEach((anime, i) => {
       const li = document.createElement('li');
+      let like = [];
+      like = likes.filter((item) => item.item_id === `${i}`);
+      let liked = 0;
+      if (like.length > 0) liked = like[0].likes;
       li.innerHTML = `<img src="${anime.image}"><h2 id="title-${i}">${anime.title}</h2>
                   <div class="container">
                   <button id="cmntb-${i}"class="learn-more" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -28,18 +35,30 @@ export default class Methods {
                 </svg>
               </label>
             </div>
-            <p class="card-body__likes like-text"> <span id="span-${i}"></span> 0 likes</p>`;
+            <p class="card-body__likes like-text"> <span id="span-${i}">${liked}</span> likes</p>`;
       movieList.appendChild(li);
       const item = {
         id: i,
         title: anime.title,
         synopsis: anime.synopsis,
         image: anime.image,
-        likes: 0,
+        likes: liked,
         comments: 0,
       };
       this.animes.push(item);
+      this.itemsCounter();
     });
+  }
+
+  increaseLikes(index) {
+    const likeSpan = document.getElementById(`span-${index}`);
+    this.animes[index].likes += 1;
+    likeSpan.innerText = this.animes[index].likes;
+  }
+
+  itemsCounter() {
+    const animesNum = document.getElementById('animesNum');
+    animesNum.innerText = this.animes.length;
   }
 
   async loadModalInfo(index, commentsAPI) {
