@@ -10,7 +10,7 @@ const container = document.querySelector('.movie-list');
 const submit = document.getElementById('submitComment');
 const username = document.getElementById('InputName');
 const comment = document.getElementById('commentToPost');
-const small = document.getElementsByTagName('small');
+const small = document.getElementById('small');
 
 methods.loadData(container, animesAPI, commentsAPI);
 
@@ -22,12 +22,13 @@ container.addEventListener('click', (e) => {
   }
 });
 
-username.addEventListener('change', () => {
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  // const comments = document.querySelector('.comments');
+  // const index = comments.id.substring(6, comments.id.length);
   if (username.value.length !== 0 && comment.value.length !== 0) {
-    submit.removeAttribute('disabled', 'disabled');
-    small.classList.remove('show');
+    methods.addNewComment(commentsAPI);
   } else {
-    submit.setAttribute('disabled', 'disabled');
     small.classList.add('show');
   }
 });
