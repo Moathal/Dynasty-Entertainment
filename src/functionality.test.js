@@ -3,7 +3,6 @@
  */
 
 import Methods from './modules/methods.js';
-/* import Api from './_mocks_/APIsGET&POST.js'; */
 
 document.body.innerHTML = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
   <div class="container-fluid">
@@ -106,6 +105,22 @@ methods.animes = [
     comments: 0,
   },
 ];
+
+describe('Number of items.', () => {
+  test('Retrieve number of items.', () => {
+    const itemsNum = document.getElementById('animesNum');
+    methods.itemsCounter();
+    expect(itemsNum.innerText).toBe(2);
+  });
+});
+
+describe('Number of likes.', () => {
+  test('Increase number of likes.', () => {
+    const Num = document.getElementById('span-0');
+    methods.increaseLikes(0);
+    expect(Num.innerText).toBe(4);
+  });
+});
 
 describe('Number of comments.', () => {
   test('Retrieve number of items.', () => {
