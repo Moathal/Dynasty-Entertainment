@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import Methods from "./modules/methods.js";
+import Methods from './modules/methods.js';
 /* import Api from './_mocks_/APIsGET&POST.js'; */
 
 document.body.innerHTML = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
@@ -91,26 +91,26 @@ const methods = new Methods();
 methods.animes = [
   {
     id: 0,
-    title: "dummyTitle",
-    synopsis: "dummySynopsis",
-    image: "dummyImage",
+    title: 'dummyTitle',
+    synopsis: 'dummySynopsis',
+    image: 'dummyImage',
     likes: 3,
     comments: 0,
   },
   {
     id: 1,
-    title: "dummyTitle",
-    synopsis: "dummySynopsis",
-    image: "dummyImage",
+    title: 'dummyTitle',
+    synopsis: 'dummySynopsis',
+    image: 'dummyImage',
     likes: 2,
     comments: 0,
   },
 ];
 
-describe("Number of comments.", () => {
-  test("Retrieve number of items.", () => {
-    const Num = document.getElementById("commentsNumber");
-    methods.addComment(1, "dummyName", "dummyDate", "dummyComment");
+describe('Number of comments.', () => {
+  test('Retrieve number of items.', () => {
+    const Num = document.getElementById('commentsNumber');
+    methods.addComment(1, 'dummyName', 'dummyDate', 'dummyComment');
     expect(Num.innerText).toBe(1);
   });
 });
