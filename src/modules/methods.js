@@ -36,6 +36,7 @@ export default class Methods {
         synopsis: anime.synopsis,
         image: anime.image,
         likes: 0,
+        comments: 0,
       };
       this.animes.push(item);
     });
@@ -66,5 +67,13 @@ export default class Methods {
         comments.appendChild(card);
       });
     }
+    this.commentsCounter(index, commentsArray);
+  }
+
+  commentsCounter(index, commentsArray) {
+    const commentsNum = document.getElementById('commentsNumber');
+    commentsNum.innerText = 0;
+    if (Array.isArray(commentsArray)) commentsNum.innerText = commentsArray.length;
+    this.animes[index].comments = commentsNum.innerText;
   }
 }
