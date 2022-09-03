@@ -21,10 +21,10 @@ container.addEventListener('click', (e) => {
   if (element === 'like') {
     methods.increaseLikes(index);
     postLikes(index, likesAPI);
-  } else if (element === 'cmnt'){
-    let commentsList = commentsAPI;
-      methods.loadModalInfo(index, commentsList);
-    }
+  } else if (element === 'cmnt') {
+    const commentsList = commentsAPI;
+    methods.loadModalInfo(index, commentsList);
+  }
 });
 
 submit.addEventListener('click', (e) => {

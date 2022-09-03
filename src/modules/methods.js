@@ -119,7 +119,7 @@ export default class Methods {
       `${currentDate.getFullYear()}-${month}-${day}`,
       comment.value,
     );
-    username.value ='';
-    comment.value ='';
+    username.value = '';
+    comment.value = '';
   }
 }
