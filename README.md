@@ -33,9 +33,9 @@ Not Available yet.
 ## Authors
 
 👤 **Mo'athal S. Kachi**
-👤 **Hassan Momanyi**
-
 - GitHub: [@githubhandle](https://github.com/Moathal)
+
+👤 **Hassan Momanyi**
 - GitHub: [@githubhandle](https://github.com/fullstop125)
 
 
