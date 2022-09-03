@@ -47,76 +47,74 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link text-lg-start text-white" href="#">Home</a>
+              <a class="nav-link text-white active" href="#"
+                >Animes(<span id="animesNum">0</span>)</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Movies</a>
+              <a class="nav-link text-lg-start text-white" href="#">Newest</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">List</a>
+              <a class="nav-link text-white" href="#">Rank</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="movie-list"></div>
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
-      rel="stylesheet"
-    />
-
-    <footer>
-      <div class="row-footer">
-        <div class="site-logo">
-          <ul class="main-nav">
-            <li class="item1">
-              <span>C</span>
-            </li>
-            <li class="item2">
-              <span>O</span>
-            </li>
-            <li class="item3">
-              <span>D</span>
-            </li>
-            <li class="item4">
-              <span>E</span>
-            </li>
-          </ul>
+    <div class="movie-list">
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="modal-body d-flex align-items-center flex-column container-fluid"
+            >
+              <img
+                id="modal-image"
+                class="img-fluid rounded shadow w-50"
+                src="#"
+                alt="anime sticker"
+              />
+              <h1 id="modal-title" class="text-center"></h1>
+              <p id="animeDescription" class="mx-4"></p>
+              <h3>Comments (<span id="commentsNumber">0</span>)</h3>
+              <div class="comments"></div>
+              <form>
+                <div class="mb-3">
+                  <label for="InputName" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="InputName"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="commentToPost" class="form-label">Comment</label>
+                  <textarea class="form-control" id="commentToPost"></textarea>
+                </div>
+                <small class="text-danger">Both fields must be filled</small>
+                <button
+                  id="submitComment"
+                  type="submit"
+                  class="btn btn-outline-primary"
+                >
+                  comment
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="row-footer">
-        <div class="follow-icons">
-          <div><span>Reach us out through</span></div>
-          <div class="social">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fab fa-github"></i></a>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fab fa-stack-overflow"></i></a>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fab fa-codepen"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row-footer">
-        <div class="right-dis">Made by <strong>kachi & Hassan</strong></div>
-        <div class="dist">Copyright © 2022. All the rights are reserved.</div>
-      </div>
-    </footer>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
