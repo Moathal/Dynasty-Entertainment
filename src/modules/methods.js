@@ -10,6 +10,7 @@ export default class Methods {
   async loadData(movieList, animeAPI, likesAPI) {
     const list = await getAnime(animeAPI);
     const likes = await getLikes(likesAPI);
+    if (Array.isArray(list)) movieList.innerHTML = '';
     list.forEach((anime, i) => {
       const li = document.createElement('li');
       let like = [];
