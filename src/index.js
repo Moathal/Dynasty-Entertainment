@@ -13,7 +13,14 @@ const username = document.getElementById('InputName');
 const comment = document.getElementById('commentToPost');
 const small = document.getElementById('small');
 
-methods.loadData(container, animesAPI, likesAPI);
+function render() {
+  container.innerHTML = `<div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center">
+    <img src="./icons&imgs/loading.svg" />
+    </div>`;
+  methods.loadData(container, animesAPI, likesAPI);
+}
+
+render();
 
 container.addEventListener('click', (e) => {
   const element = e.target.id.substring(0, 4);
